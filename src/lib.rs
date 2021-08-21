@@ -1,7 +1,15 @@
 #[cfg(test)]
 mod tests {
     #[test]
-    fn it_works() {
+    // fn it_works() {
+    //     assert_eq!(2 + 2, 4);
+    // }
+    fn exploration() {
         assert_eq!(2 + 2, 4);
+    }
+
+    #[test]
+    fn another() {
+        panic!("Make this test fail");
     }
 }
