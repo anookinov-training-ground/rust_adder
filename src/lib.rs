@@ -45,6 +45,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore]
     fn greeting_contains_name() {
         let result = greeting("Carol");
         assert!(
@@ -76,6 +77,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore]
     fn this_test_will_fail() {
         let value = prints_and_returns_10(8);
         assert_eq!(5, value);
@@ -103,6 +105,12 @@ mod tests {
     }
 
     #[test]
+    // testing private function
+    fn internal() {
+        assert_eq!(4, internal_adder(2, 2));
+    }
+
+    #[test]
     // fn it_works() {
     //     assert_eq!(2 + 2, 4);
     // }
@@ -111,6 +119,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore]
     fn another() {
         panic!("Make this test fail");
     }
@@ -132,6 +141,14 @@ impl Rectangle {
 pub fn add_two(a: i32) -> i32 {
     a + 2
     // a + 3
+}
+
+pub fn add_two_private(a: i32) -> i32 {
+    internal_adder(a, 2)
+}
+
+fn internal_adder(a: i32, b: i32) -> i32 {
+    a + b
 }
 
 pub fn greeting(name: &str) -> String {
